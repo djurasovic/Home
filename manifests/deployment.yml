@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "dankub"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "dankub"
+    spec:
+      containers:
+        - name: "dankub"
+          image: "containerdan.azurecr.io/dankub"
+          ports:
+          - containerPort: 80
